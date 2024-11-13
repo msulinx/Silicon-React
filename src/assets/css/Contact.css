@@ -1,0 +1,675 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+
+}
+:root {
+    --header-background: #F3f6FF;
+    --body-background: #FFFFFF;
+    --heading: #0B0F19;
+    --subtitle: #565973;
+    --subtitle-light: #9397AD;
+    --button: #6F6EF0;
+    --white-black:  #FFFFFF;
+    --black-white: #000000;
+    --toggle-bg: #9f9f9f;
+    --form-background: #FFFFFF;
+    --button-background: #FFFFFF;
+
+}
+
+[data-theme='dark'] {
+    --header-background: #0B0F19;
+    --body-background: #0B0F19;
+    --heading: #FFFFFF;
+    --subtitle: #FFFFFF;
+    --toggle-bg: #6F6EF0;
+    --white-black: #000000;
+    --black-white: #FFFFFF;
+    --form-background: #131a2e;
+    --button-background: #0B0F19;
+}
+
+
+#content-wrap {
+    background-color: var(--body-background);
+}
+
+/* Navbar */
+
+.contact-navbar {
+    background-color: var(--header-background);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+
+    .silicon-logo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: .5rem;
+        font-weight: 800;
+        color: var(--heading);
+    }
+}
+
+    .navbar-right {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+.features-link,
+.contact-link,
+.dark-mode-text {
+    display: none;
+}
+
+
+/* Toggle switch (Kod tagen från W3Schools) */
+
+.switch {
+    display:inline-block;
+    position: relative;
+    width: 48px;
+    height: 23px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--toggle-bg);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+  
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+  
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.dropdown-button {
+    color: var(--black-white);
+    background-color: var(--primary-bg);
+    border:none;
+    font-size: 1.5rem;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 13%;
+    right: 5%;
+    background-color: var(--primary-bg);
+    border: 1px solid var(--black-white);
+    border-radius: 10px;
+}
+
+.dropdown-menu li {
+    font-size: .8rem;
+    list-style: none;
+    padding: .5rem;
+    color: var(--black-white);
+}
+
+.dropdown-menu li:hover {
+    background-color: var(--content-bg);
+    cursor: pointer;
+}
+
+.dropdown-menu a {
+    text-decoration: none;
+}
+
+
+.signin-btn {
+    display: none;
+}
+
+/* Hero */
+
+.hero-container {
+    background-color: var(--header-background);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        font-size: 1.5rem;
+        margin: 2rem;
+        text-align: center;
+        color: var(--black-white);
+    }
+}
+
+.breadcrumb {
+    display: none;
+}
+
+.heading {
+    display: flex;
+    margin-left: 33%;
+    gap: .8rem;
+
+    h2 {
+        font-size: 1rem;
+        color: var(--black-white);
+    }
+
+    .circle {
+        background-color: #FFFFFF;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        position: relative;
+    }
+
+    .email-icon,
+    .career-icon {
+        width: 13px;
+        height: 13px;
+        left: 22%;
+        top: 20%;
+        position: absolute;
+    }
+}
+
+.contact-info-text {
+    font-size: .8rem;
+    width: 60%;
+    margin-left: 25%;
+    padding: 1rem;
+    color: var(--subtitle);
+}
+
+.hero-button {
+    display: block;
+    color: var(--button);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: .8rem;
+    margin-left: 29%;
+    margin-bottom: 2rem;
+    border: none;
+    background-color: var(--background);
+}
+
+.hero-button::after {
+    content: "\f061";
+    font-family: "FontAwesome";
+    color: var(--button);
+    margin-left: .5rem;
+    line-height: 1rem;
+}
+
+/* Form */
+
+#consultation-form {
+    background-color: var(--form-background);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+
+    h2 {
+        padding: 2rem;
+        color: var(--black-white);
+    }
+}
+
+.form-label {
+    color: var(--black-white);
+    display: block;
+    margin-bottom: .8rem;
+    font-size: .8rem;
+}
+
+ .input-box {
+    margin: auto;
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    border: 0.5px solid var(--subtitle-light);
+    margin-bottom: 2rem;
+    padding: 1rem;
+    display: flex;
+    background-color: #FFFFFF;
+}
+
+#customSelect {
+    margin: auto;
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    border: 0.5px solid var(--subtitle-light);
+    margin-bottom: 2rem;
+}
+
+.appointment-button {
+    background-color: var(--button);
+    color: #FFFFFF;
+    display: block;
+    border-radius: 10px;
+    border-style: none;
+    width: 150px;
+    height: 40px;
+    margin-bottom: 2rem;
+}
+
+.submitbox-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    gap: 2rem;
+
+    h1 {
+        font-size: 1.3rem;
+        text-align: center;
+        color: var(--black-white);
+    }
+
+    p {
+        font-size: 1rem;
+        color: var(--black-white);
+    }
+}
+
+
+.submitted-button {
+    width: 60px;
+    height: 25px;
+    background-color: var(--button);
+    border-radius: 5px;
+    border: none;
+    color: #FFFFFF;
+}
+
+.validation-error {
+    color: #db564d;
+    font-size: .7rem;
+}
+
+/* Map */
+
+#map {
+    background-color: var(--primary-bg);
+}
+
+.map-image {
+    margin-block: 1rem;
+    margin-left: 10%;
+    width: 80%;
+}
+
+.medical-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--subtitle);
+    line-height: 2.5rem;
+    gap: 2rem;
+    margin-left: 25%;
+    width: 50%;
+
+    h2 {
+        color: var(--heading);
+        font-size: 1.3rem;
+        margin-top: 1rem;
+    }
+
+    .medical-one,
+    .medical-two {
+        font-size: .7rem;
+    }
+}
+
+.address::before {
+    content: "\f276";
+    color: var(--button);
+    font-family: "FontAwesome";
+    margin-right: .5rem;
+}
+
+.number {
+    text-decoration: none;
+    color: var(--subtitle);
+}
+
+.number:before {
+    content: "\f2a0";
+    color: var(--button);
+    font-family:"FontAwesome";
+    margin-right: .5rem;
+}
+
+.opening-hours::before {
+    content: "\f017";
+    color: var(--button);
+    font-family:"FontAwesome";
+    margin-right: .5rem;
+}
+
+.opening-hours span {
+    display: block;
+    margin-left: 1.5rem;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 1rem 1rem;
+    background-color: var(--primary-bg);
+    width: 100%;
+
+    .socials-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #EFF2FC;
+        width: 30px;
+        height: 30px;
+        border-radius: 5px;
+    }
+}
+
+.footer {
+    background-color: var(--map-background);
+    color: var(--subtitle);
+    font-weight: 250;
+    font-size: 0.8em;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Desktop */
+
+
+@media (min-width: 1400px) {
+
+    /* Hero */
+
+    .navbar-left {
+        display: inline-flex;
+        align-items: center;
+         margin-left: 18%;
+         gap: 2.5rem;
+     }
+
+     .features-link,
+     .contact-link,
+     .dark-mode-text {
+        display: block;
+        color: var(--black-white);
+        text-decoration: none;
+        font-size: 1rem;
+    }
+     
+     
+     .navbar-right {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-right: 5rem;
+
+        .menu-button {
+            display: none;
+        }
+ 
+     }
+
+       
+     /* Sign in */
+     
+     
+     .signin-btn {
+         background-color: var(--button);
+         color: #FFFFFF;
+         border-radius: 5px;
+         border: none;
+         height: 30px;
+         width: 130px;
+         position: relative;
+         display: block;
+     }
+     
+     .signin-btn::before {
+         content: "\f007";
+         font-family: "FontAwesome";
+         font-size: 1rem;
+         padding-right: 0.5rem;
+    }
+
+    /* Hero */
+
+    .hero-container {
+        position: relative;
+        display: flex;
+        align-items:flex-start;
+        height: 700px;
+    }
+    
+    .breadcrumb {
+        display: flex;
+        gap: .8rem;
+        color: var(--subtitle-light);
+        margin-left: 8%;
+        margin-top: -3%;
+    }
+
+    .home-link {
+        color: var(--subtitle-light);
+        text-decoration: none;
+    }
+
+    .home-link::hover {
+        text-decoration: underline;
+    }
+
+    .breadcrumb i {
+        font-size: .8rem;
+        line-height: 1.5rem;
+    }
+
+    .contact {
+        text-decoration: none;
+        color: var(--button);
+        border: none;
+    }
+    
+    .hero-content {
+        margin-block: 1rem;
+
+
+    h1 {
+        font-size: 2.5rem;
+        margin-left: 10%;
+    }
+
+    }
+ 
+    .text-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+        line-height: 2rem;
+
+        h2 {
+            font-size: 1.3rem;
+        }
+    }
+
+    .heading {
+        margin-left: 30%;
+
+        .email-icon, 
+        .career-icon { 
+            width: 22px;
+            height: 22px;
+            left: 28%;
+            top: 25%;
+        }
+
+        .circle {
+            width: 50px;
+            height: 50px;
+            left: -5%;
+        }
+    }
+
+    .contact-info-text {
+        margin-left: 41%;
+        margin-top: -5%;
+    }
+
+    .hero-button {
+        margin-left: 45%;
+    }
+
+    
+    /* Form */
+    
+    #consultation-form {
+        width: 36%;
+        height: 650px;
+        position: absolute;
+        top: 13%;
+        left: 47%;
+        padding: 2rem;
+        filter: drop-shadow(2px 2px 2px var(--subtitle-light));
+
+        h2 {
+            margin-left: -30%;
+        }
+    }
+    
+    .input-box {
+        width: 400px;
+        height: 35px;
+        border-radius: 5px;
+        border: 0.5px solid var(--subtitle-light);
+        margin-bottom: 2rem;
+        padding: 1rem;
+        display: flex;
+    }
+    
+    .form-label {
+        display: block;
+        font-size: .8rem;
+        text-align: left;
+    }
+
+    .appointment-button {
+        width: 80%;
+        height: 10%;
+        margin-top: 28%;
+        filter: drop-shadow(2px 2px 2px var(--subtitle-light));
+    }
+
+    .submitbox-contact {
+        position: absolute;
+        top: 30%;
+        left: 60%;
+
+    }
+
+    
+    /* MAP */
+    
+    #map {
+        display: flex;
+        margin-block: 10rem;
+        gap: 5rem;
+
+        .map-image {
+            width: 45%;
+            height: 45%;
+        }
+    }
+
+    /* Medical info */
+    
+    .medical-info {
+        margin-left: 2rem;
+        margin-top: -8%;
+
+        h2 {
+            font-size: 1.5rem;
+        }
+
+        .medical-one, 
+        .medical-two {
+            font-size: 1rem;
+        }
+    }
+    
+    .socials {
+        position: absolute;
+        bottom: -5%;
+        left: 60%;
+        width: 20%;
+
+        .socials-icon {
+            width: 45px;
+            height: 45px;
+        }
+    
+    }
+
+}
