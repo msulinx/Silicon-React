@@ -3,8 +3,16 @@ import { useState } from "react";
 
 const ConsultationForm = () => {
 
-	const [options, setOptions] = useState([{ id: 1, text: "1" }, { id: 2, text: "2" }, { id: 3, text: "3" }])
-	const [formData, setFormData] = useState({ fullName: '', email: '', specialist: options[0].id, });
+	const [options, setOptions] = useState([
+		{ id: 1, text: "1" },
+		{ id: 2, text: "2" }, 
+		{ id: 3, text: "3" }])
+
+	const [formData, setFormData] = useState(
+		{fullName: '', 
+		email: '', 
+		specialist: options[0].id, });
+		
 	const [errors, setErrors] = useState({});
 	const [submitted, setSubmitted] = useState(false);
 

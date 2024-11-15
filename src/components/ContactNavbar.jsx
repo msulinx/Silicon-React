@@ -2,11 +2,11 @@ import React from 'react'
 import LogoType from '../assets/icons/siliconlogo.svg'
 import { NavLink } from 'react-router-dom'
 import DropdownContact from './DropdownContact'
-import { useTheme } from './ThemeContext';
+import { contextFunctions } from './ContextComponent';
 
 const ContactNavbar = () => {
 
-	const {toggleTheme} = useTheme();
+	const { toggleTheme } = contextFunctions();
 
   return (
 	<nav aria-labelledby="main-navigation">

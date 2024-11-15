@@ -1,15 +1,12 @@
 import React from 'react'
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link';
+import { contextFunctions } from './ContextComponent';
 
 const DropdownHome = () => {
 
-	const [isOpen, setIsOpen] = useState(false)
 
-	const toggleDropdown = () => {
-		setIsOpen(!isOpen)
-	}
+	const { toggleDropdown, isOpen } = contextFunctions ();
 
 
   return (

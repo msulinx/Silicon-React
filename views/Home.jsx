@@ -1,5 +1,4 @@
 import React from 'react'
-import { useState } from 'react'
 import Navbar from '../src/components/Navbar'
 import Header from '../src/components/Header'
 import Logos from '../src/components/Logos'
@@ -11,11 +10,11 @@ import Testimonials from '../src/components/Testimonials'
 import FAQ from '../src/components/FAQ'
 import Subscribe from '../src/components/Subscribe'
 import Footer from '../src/components/Footer'
-import { useTheme } from '../src/components/ThemeContext'
+import { contextFunctions } from '../src/components/ContextComponent'
 
 const Home = () => {
 
-  const {theme} = useTheme ();
+  const { theme } = contextFunctions ();
 
 
   return (

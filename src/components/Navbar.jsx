@@ -2,11 +2,11 @@ import React from 'react'
 import LogoType from '../assets/icons/siliconlogo.svg'
 import { NavLink } from 'react-router-dom'
 import DropdownHome from './DropdownNavHome'
-import { useTheme } from './ThemeContext';
+import { contextFunctions } from './ContextComponent';
 
 const Navbar = () => {
 
-	const {toggleTheme} = useTheme();
+	const { toggleTheme } = contextFunctions ();
 
   return (
 	<nav aria-labelledby="main-navigation">

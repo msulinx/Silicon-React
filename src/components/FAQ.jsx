@@ -47,7 +47,8 @@ const FAQ = () => {
 			<div className="faqs">
 				<h3 className="question">{title}</h3>
 				<button onClick={() => handleToggle(index)} id="chevron">
-					<FontAwesomeIcon icon={openIndex === index ? faChevronUp : faChevronDown}/></button>
+					<FontAwesomeIcon icon={openIndex === index ? faChevronUp : faChevronDown}/>
+				</button>
 				{openIndex === index && <p className="answer">{content}</p>}
 			</div>
 		</div>

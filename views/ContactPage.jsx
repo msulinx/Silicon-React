@@ -7,11 +7,11 @@ import ConsultationForm from '../src/components/ConsultationForm'
 import Map from '../src/components/Map'
 import Socials from '../src/components/Socials'
 import Footer from '../src/components/Footer'
-import { useTheme } from '../src/components/ThemeContext'
+import { contextFunctions } from '../src/components/ContextComponent'
 
 const ContactPage = () => {
 
-  const {theme} = useTheme ();
+  const { theme } = contextFunctions ();
 
   return (
     <div id="content-wrap" data-theme={theme}>

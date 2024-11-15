@@ -28,8 +28,15 @@ const Testimonials = () => {
 	<>
 	<div className="client-review">
 		<h1>Clients are <br className="desktop-only-br"/>Loving Our App</h1>
-	{testimonials.map(({ id, author, avatarUrl, comment, jobRole, starRating }) => (
-	  <CommentCard key={id} author={author} avatarUrl={avatarUrl} comment={comment} jobRole={jobRole} starRating={starRating} />
+	{testimonials.map(({ 
+		id, author, avatarUrl, comment, jobRole, starRating }) => (
+	  <CommentCard 
+	  		key={id}
+	   		author={author} 
+	   		avatarUrl={avatarUrl} 
+	   		comment={comment} 
+	   		jobRole={jobRole} 
+	   		starRating={starRating} />
 	))}
   </div>
   </>
